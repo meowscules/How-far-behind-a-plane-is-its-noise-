@@ -18,11 +18,18 @@ int main(int argc, char* argv[])
 		break;
 	}
 	case 3:{
-		Calculation numberOne;
-		numberOne.setairplaneSpeed(atoi(argv[1]));
-		numberOne.setobsFromPlaneDistance(atoi(argv[2]));
-		std::cout << numberOne.computing() << std::endl;
-		break;
+		if ((atoi(argv[1]) != 0 && atoi(argv[2]) != 0) && (atoi(argv[1]) > 0 && atoi(argv[2]) > 0)){
+			Calculation numberOne;
+			numberOne.setairplaneSpeed(atoi(argv[1]));
+			numberOne.setobsFromPlaneDistance(atoi(argv[2]));
+			std::cout << numberOne.computing() << std::endl;
+			break;
+		}
+		else {
+			std::cout << "Wrong types of arguments. Type math -h for help" << std::endl;
+			break;
+		}
+		
 	}
 	default: {
 		std::cout << "Type math -h for help" << std::endl;
@@ -31,5 +38,3 @@ int main(int argc, char* argv[])
 	}
 
 }
-
-
